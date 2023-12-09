@@ -1,0 +1,45 @@
+# Unity generated
+[Tt]emp/
+[Ll]ibrary/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]serSettings/
+
+# personalized
+[Ss]prites/
+
+# VS Code generated
+.vscode/
+
+# Rider generated
+.idea/
+
+# User-specific files
+*.suo
+*.user
+*.userprefs
+*.lock
+*.pidb
+*.sln.docstates
+
+# Unity3D generated meta files
+*.pidb.meta
+
+# Unity3D Generated File On Crash Reports
+sysinfo.txt
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Linux
+*.log
+
+# Rider
+.idea/
+*.sln.iml
