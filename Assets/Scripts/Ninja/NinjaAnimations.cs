@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using test.Assets.Scripts.Ninja;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class NinjaAnimations : MonoBehaviour
@@ -12,6 +14,7 @@ public class NinjaAnimations : MonoBehaviour
     
     private readonly int xHash = Animator.StringToHash("x");
     private readonly int yHash = Animator.StringToHash("y");
+    private readonly int DieHash = Animator.StringToHash("Die");
 
     private void Awake()
     {
@@ -49,5 +52,19 @@ public class NinjaAnimations : MonoBehaviour
             ActivateLayer(layerWalkName);
         else
             ActivateLayer(layerIdleName);
+    }
+    private void OnEnable()
+    {
+        NinjaLife.EventNinjaDeath += NinjaDeath;
+    }
+    private void OnDisable()
+    {
+        NinjaLife.EventNinjaDeath -= NinjaDeath;
+    }
+    private void NinjaDeath()
+    {
+        if(animator.GetLayerWeight(animator.GetLayerIndex(layerIdleName)) == 1)
+            animator.SetBool(DieHash,true);
+
     }
 }
